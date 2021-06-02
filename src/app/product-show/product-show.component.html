@@ -1,0 +1,125 @@
+<!-- <div class="container">
+  <div class="row">
+    <ul *ngFor="let item of productList">
+
+
+
+      <li *ngIf="(item.itemType)===product">
+        <div class="col-sm-6">
+
+
+          <div class="card" style="width: 18rem;">
+            <img src="{{item.imageSource}}" class="card-img-top" alt="18px">
+            <div class="card-body">
+              <h5 class="card-title"> {{item.itemName}} </h5>
+              <p class="card-text"> Price : Rs {{item.itemPrice}}</p>
+              <a routerLink="/Checkout" class="btn btn-primary"> Add to Cart</a>
+
+              <svg (click)="increaseQty(item)" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg>
+              <span style="font-size: large;">{{item.itemQty}}</span>
+              <span style="font-size: large;">{{totalAmount}}</span>
+              <svg (click)="decreaseQty(item)" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+      </li>
+
+    </ul>
+  </div>
+</div> -->
+
+<!-- <div class="content">
+  <ul *ngFor="let item of productList">
+    <li *ngIf="(item.itemType)===product">
+  <mat-card-header>
+    <mat-card-title></mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{item.imageSource}}">
+  <mat-card-content>
+    <h2 class="card-title"> {{item.itemName}} </h2>
+    <h3 class="card-text"> Price : Rs {{item.itemPrice}}</h3>
+  </mat-card-content>
+  <mat-card-actions>
+    
+              <a routerLink="/Checkout" class="btn btn-primary"> Add to Cart</a>
+
+              <svg (click)="increaseQty(item)" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg>
+              <span style="font-size: large;">{{item.itemQty}}</span>
+              <span style="font-size: large;">{{totalAmount}}</span>
+              <svg (click)="decreaseQty(item)" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+              </svg>
+  </mat-card-actions>
+    </li>
+  </ul>
+</div> -->
+<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-item active">
+    <img src="/assets/Images/ProductBackground.jpg" class="d-block w-100" alt="...">
+  </div>
+</div> -->
+
+
+<div class="page-wrapper">
+  <div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="8px grid">
+      <div fxFlex="1 1 25%" *ngFor="let item of productList">
+        <div *ngIf="(item.itemType)===product">
+              <mat-card class="mat-elevation-z4">
+                <mat-card-header>
+                  <div mat-card-avatar></div>
+                  <mat-card-title style="font-weight: bolder;font-size:x-large;">{{item.itemName}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{item.imageSource}}">
+                <table>
+                  <thead>
+                    <tr>
+                      <th style="font-size:x-large">Price</th>
+                      <th style="font-size:x-large">Amount Due</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="padding-left:5px;font-size:x-large;padding-right: 70px;">{{item.itemPrice | currency
+                        :'INR'}}
+                      </td>
+                      <td style="padding-left:5px;font-size:x-large;padding-left: -60px;">{{totalAmount | currency
+                        :'INR'}}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <mat-card-actions>
+                  <svg (click)="increaseQty(item)" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                  </svg>
+                  <label style="font-size: large;font-weight: bold;">Qty.</label>
+                  <span style="font-size: large;">{{item.itemQty}}</span>
+                  <svg (click)="decreaseQty(item)" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+                  </svg>
+                  <div class="flex-spacer"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                  </svg>
+                </mat-card-actions>
+              </mat-card>
+              <div id="nextRow" class="flex-spacer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

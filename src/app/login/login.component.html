@@ -1,0 +1,32 @@
+<body>
+    <div class="wrapper bg-white">
+        <p class="aligncenter"> <img id="logo"  src="/assets/Images/Logo1.jpg" alt="centered image"></p>
+
+       
+        <div class="h2 text-center">LimeAndLemon</div>
+        <div class="h4 text-muted text-center pt-4">Enter your login details</div>
+        <form class="pt-3">
+            <div class="form-group py-2">
+                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text"
+                        placeholder="Phone Number or User Id" required class="" [(ngModel)]="givenUserId" name="Pathishav"> </div>
+            </div>
+            <div class="form-group py-1 pb-2">
+                <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="text"
+                        placeholder="Enter your Password" required class="" [(ngModel)]="givenPassword" name="ABCDE123"> <button class="btn bg-white text-muted">
+                        <span class="far fa-eye-slash"></span> </button> </div>
+            </div>
+            <div class="d-flex align-items-start">
+                <div class="remember"> <label class="option text-muted"> Remember me <input type="radio" name="radio">
+                        <span class="checkmark"></span> </label> </div>
+                <div class="ml-auto"> <a href="#" id="forgot">Forgot Password?</a> </div>
+            </div> <button class="btn  btn-success btn-block text-center my-3" type="Submit" (click)="onClick()">Log in</button>
+            <div class="text-center pt-3 text-muted">Not a member? <a routerLink="/SignUp">Sign up</a></div>
+           
+        </form>
+        <hr class="my-4">
+        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2">Sign in with Google</i></button>
+        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"> Sign in with Facebook</i></button>
+         
+    </div>
+
+</body>
